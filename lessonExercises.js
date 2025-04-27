@@ -90,3 +90,58 @@ try {
 // Finally
 // Under the finally block
 
+// Exercise: Fetch all posts from the JSON Placeholder using async/await.
+
+async function fetchPosts() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    const posts = await response.json();
+    console.log(posts);
+  } catch (error) {
+    console.error("Error fetching posts: ", error);
+  }
+}
+
+fetchPosts();
+
+// Exercise: Fetch all posts and comments in parallel
+
+async function fetchPostsAndComments() {
+  try {
+    const data = await Promise.all([
+      fetch("https://jsonplaceholder.typicode.com/posts"),
+      fetch("https://jsonplaceholder.typicode.com/comments")
+    ]);
+
+    const postsResponse = data[0];
+    const commentsREsponse = data[1];
+
+    const [postsData, commentsData] = await Promise.all([
+      postsResponse.json(),
+      commentsREsponse.json()
+    ]);
+      
+    console.log("Posts: ", postsData);
+    console.log("Comments: ", commentsData);
+  } catch (error) {
+    console.log("Error fetching data:", error);
+  }
+}
+
+fetchPostsAndComments();
+
+// Exercise: Fetch photos. Add error handling.
+
+async function fetchPhotos() {
+  try {
+    const photosResponse = await fetch("https://jsonplaceholder.typicode.com/photos");
+    const photosData = await photosResponse.json();
+    console.log(photosData);
+  } catch (error) {
+    console.log("Something went wrong while fetching photos: ", error)
+  } finally {
+    console.log("Fetching photos is finished");
+  }
+}
+
+fetchPhotos();
