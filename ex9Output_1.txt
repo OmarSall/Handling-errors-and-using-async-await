@@ -1,0 +1,1 @@
+This is the content for the ex9 non-async version.
