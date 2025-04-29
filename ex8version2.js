@@ -3,8 +3,7 @@ const path = require("path");
 
 async function readTextFile(path) {
   try {
-    const data = await fs.readFile(path, "utf-8");
-    return data;
+    return fs.readFile(path, "utf-8");
   } catch (error) {
     if (error.code === "ENOENT") {
       return null;
