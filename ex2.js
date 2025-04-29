@@ -16,6 +16,6 @@ function parseDateIfValid(date) {
     return parsedDate;
 }
 
-parseDateIfValid('2024-02-28T02:33:33.210Z'); // <- valid
-parseDateIfValid('2024-ABC'); // <- invalid
+parseDateIfValid("2024-02-28T02:33:33.210Z"); // <- valid
+parseDateIfValid("2024-ABC"); // <- invalid
 parseDateIfValid(1709087704751); // <- valid

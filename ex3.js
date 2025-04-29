@@ -24,4 +24,4 @@ evaluateScript(`
   subtract(20, 10);
 `); // 10
 
-evaluateScript('const number = '); // null
+evaluateScript("const number = "); // null
