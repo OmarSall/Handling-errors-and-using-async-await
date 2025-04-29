@@ -15,7 +15,7 @@ function evaluateScript(userCode) {
     }
 }
 
-evaluateScript('1 + 5'); // 6
+evaluateScript("1 + 5"); // 6
 
 evaluateScript(`
   function subtract(number, numberToSubtract) {
